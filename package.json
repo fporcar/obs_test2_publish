@@ -4,7 +4,7 @@
   "description": "obs assignment",
   "main": "index.js",
   "scripts": {
-    "test": "obs_test .\\\\jsonInput.json .\\\\jsonOutput.json"
+    "test": "obs_test2 .\\\\jsonInput.json .\\\\jsonOutput.json"
   },
   "author": "Francisco Javier Porcar Laynez",
   "license": "MIT",
