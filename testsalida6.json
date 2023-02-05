@@ -1,1 +1,0 @@
-{"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":8,"commands":["F","S","R","F","S","R","F","L","F","S"],"VisitedCells":[{"x_init":0,"y_init":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":2}],"SamplesCollected":["Fe","Si","W"],"FinalPosition":{"location":{"x":0,"y":2},"facing":"South"}}
