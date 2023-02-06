@@ -128,11 +128,11 @@ app.put('/api/:comando', function(req, res) {
       // Si lectura correcta creamos objetvo myrobot con JSON.parse
       const myrobot = JSON.parse(data);
       
-      const x_init= myrobot.initialPosition.location.x ;
-      const y_init= myrobot.initialPosition.location.y ;
+      const xinit= myrobot.initialPosition.location.x ;
+      const yinit= myrobot.initialPosition.location.y ;
       if (! myrobot.hasOwnProperty("VisitedCells")) { // Si no existe, iniciar array
-        //myrobot.VisitedCells = [myrobot.initialPosition.location]
-        myrobot.VisitedCells = [{x_init, y_init}]
+        //myrobot.VisitedCells = [{"x":xinit, "y":yinit}]
+        myrobot.VisitedCells = [{"x":xinit, "y":yinit}]
       }
       let x= myrobot.initialPosition.location.x ;
       let y= myrobot.initialPosition.location.y ;
@@ -258,6 +258,7 @@ app.post('/api/savefile', function(req, res) {
       // Cambiamos la propiedad initialPosition por FinalPosition 
       myrobot.FinalPosition = myrobot.initialPosition;
       delete myrobot.initialPosition;
+      
 
       // Persistimos en "BDD", es un fichero texto con formato JSON
       const myrobotOut = JSON.stringify(myrobot);
