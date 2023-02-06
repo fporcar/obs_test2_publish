@@ -1,1 +1,1 @@
-{"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":10,"commands":["S","F","S","R","F","S","F","S"],"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Fe","Si","Si"],"FinalPosition":{"location":{"x":1,"y":1},"facing":"South"}}
+{"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":50,"commands":["S","F","S","R","F","S","F","S"],"FinalPosition":{"location":{"x":0,"y":0},"facing":"East"}}
