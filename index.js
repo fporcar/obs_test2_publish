@@ -132,7 +132,7 @@ function save(myrobotOut) {
     if (err) {
       console.log('Error writing file', err)
     } else {
-      console.log('Successfully wrote file')
+      console.log('Successfully wrote file. myrobotOut=' + myrobotOut)
     }
   })
 }
@@ -141,6 +141,9 @@ function save(myrobotOut) {
 app.put('/api/:comando', function(req, res) {
   
   var com= req.params.comando;
+  
+  console.log("INICIO ejecutando put http://localhost:3001/api/" + com);
+
   // Validamos comando
   if ( ! ['F', 'B', 'R', 'L', 'S', 'E'].includes(com) ) {
     res.status(400).json("comando no conocido: " + com + " comando debe ser: F, B, R, L, S, E. Ver ayuda");
@@ -155,6 +158,7 @@ app.put('/api/:comando', function(req, res) {
       res.status(400).json("Error lectura file DB : " + robotsDB)
     } else {
       // Si lectura correcta creamos objetvo myrobot con JSON.parse
+      console.log("robosDB read, data=" + data);
       const myrobot = JSON.parse(data);
       
       
@@ -192,8 +196,8 @@ app.put('/api/:comando', function(req, res) {
           console.log("robot charged battery!= ", myrobot);
           // Persistimos en "BDD", es un fichero texto con formato JSON
           //const myrobotOut = JSON.stringify(myrobot);
-          const myrobotOut = JSON.stringify(myrobot);
-          save(myrobotOut);
+          //const myrobotOut = JSON.stringify(myrobot);
+          //save(myrobotOut);
         // Comando recoger muestra
         } else if ( com == 'S') {
           // Coger muestra consume 8
@@ -205,8 +209,8 @@ app.put('/api/:comando', function(req, res) {
           }
           // Persistimos en "BDD", es un fichero texto con formato JSON
           //const myrobotOut = JSON.stringify(myrobot);
-          const myrobotOut = JSON.stringify(myrobot);
-          save(myrobotOut);
+          //const myrobotOut = JSON.stringify(myrobot);
+          //save(myrobotOut);
         // Comando Forward o Backward, or turn right or left
         } else if ( ['F','B','L','R'].includes(com) ) {
           var newdir = direccion;
@@ -252,15 +256,35 @@ app.put('/api/:comando', function(req, res) {
 
             // Persistimos en "BDD", es un fichero texto con formato JSON
             //const myrobotOut = JSON.stringify(myrobot);
-            const myrobotOut = JSON.stringify(myrobot);
-            save(myrobotOut);
+            //const myrobotOut = JSON.stringify(myrobot);
+            //save(myrobotOut);
           } else {
             console.log("No se puede hacer movimiento, aplicar estrategias");
-            ejecutarestrategias(myrobot.initialPosition.location);
+            //ejecutarestrategias(myrobot.initialPosition.location);
+            //.then((res) => {console.log('I am the .then of ejecutar estrategias. res=' + res); return res })
+            //.catch((err) => { console.log('I am here waitting strategies execution pero hubo un error:' + err); return err } );
+            console.log('BLOQUEADO. APLICAR ESTRATEGIAS.', err);
+            console.log("FIN ejecutando put http://localhost:3001/api/" + com);
+            return res.status(206).json(myrobot)
+            /*myrobot.blocked = true; 
+            const myrobotOut = JSON.stringify(myrobot);
+            save(myrobotOut); */
           }
         }
       }
-      return res.status(200).json(myrobot)
+      const myrobotOut = JSON.stringify(myrobot);
+      //save(myrobotOut);
+      fs.writeFile(robotsDB, myrobotOut, err => {
+        if (err) {
+          console.log('ERROR writing file', err)
+          console.log("FIN ejecutando put http://localhost:3001/api/" + com);
+          return res.status(400).json(myrobot)
+        } else {
+          console.log('Successfully wrote file. myrobotOut=' + myrobotOut)
+          console.log("FIN ejecutando put http://localhost:3001/api/" + com);
+          return res.status(200).json(myrobot)
+        }
+      })
     }    
   })
 })
@@ -305,16 +329,27 @@ app.post('/api/savefile', function(req, res) {
 
 ///////////////////// EJECUTAR ESTRATEGIAS
 async function ejecutarestrategias(location) {
-  const estrategias= [['E','R','F'],['E','L','F'],['E','L','L','F'],['E','B','R','F'],['E','B','B','L','F'],['E','F','F'],['E','F','L','F','F']];
-  var estrategiaOK= false; i=-1;
+  //const estrategias= [['E','R','F'],['E','L','F'],['E','L','L','F'],['E','B','R','F'],['E','B','B','L','F'],['E','F','F'],['E','F','L','F','F']];
+  const estrategias= [['E','R','F'],['E','L','F']];
+  
+  // Condición para salir del bucle, que al ejecutar la estrategía se salga de estar bloqueado el robot
+  // o bien que no queden más estrategias
+  var estrategiaOK= false; 
+  i=-1;
+
+  console.log("Inicio bucle estrategias" );
   while ( !estrategiaOK && i < estrategias.length-1) {
     i++;
-    console.log("EEEEEEEEEEEEEEEEE estrategias= " + estrategias[i]);
-    const est_aux_ok = await ejecutarcoms(estrategias[i], location);
-
-
-    // Comprobamos si se ha movido y por tanto se deja de ejecutar estrategias
-    const out = await fetch('http://localhost:3001/api/location' , { method: 'GET' })
+    for (let com in estrategias[i]) {
+      //axios.put('http://localhost:3001/api/E');
+      console.log(com + ' - http://localhost:3001/api/' + coms[com] );
+      const out =  await fetch('http://localhost:3001/api/' + coms[com] , { method: 'PUT' })
+      .then(  (res) => { console.log('ejecutar comandos. res=' + res); return res })
+      //.then(  (body) => { console.log("Line 355: WHERE?" + body) } )
+      .catch( (err) =>  { console.log("ejecutar comandos. err=" + err); return err });
+    }
+    /*// Comprobamos si se ha movido y por tanto se deja de ejecutar estrategias
+    const out = fetch('http://localhost:3001/api/location' , { method: 'GET' })
                     .then(  (response) => response.text())
                     .then(  (body) => { 
                     console.log(body); 
@@ -323,13 +358,16 @@ async function ejecutarestrategias(location) {
                     if ( estrategiaOK ) return estrategiaOK; else return false;
                     } )
                    .catch( (err) => { console.log(err) } )      
-
+     */
   }
 }
 
+
+
+
 /////////////////////// EJECUTAR COMANDOS o TAMBIÉN UNA DE LAS ESTRATEGIAS
-async function ejecutarcoms(coms, location) {
-  
+/* async function ejecutarcoms(coms, location) {
+
   const locaux= location;
   var loc=location;
   //console.log("YYYYYYYYYYYYYYYYYYYYYYYY location= " + location.x + " " +location.y);
@@ -337,11 +375,31 @@ async function ejecutarcoms(coms, location) {
   for (let com in coms) {
         //axios.put('http://localhost:3001/api/E');
         console.log(com + ' - http://localhost:3001/api/' + coms[com] );
-        const out = await fetch('http://localhost:3001/api/' + coms[com] , { method: 'PUT' })
-        .then(  (response) => response.text())
-        .then(  (body) => { console.log(body) } )
-        .catch( (err) => { console.log(err) } )  
+        const out =  await fetch('http://localhost:3001/api/' + coms[com] , { method: 'PUT' })
+        .then(  (res) => { console.log('ejecutar comandos. res=' + res); return res })
+        //.then(  (body) => { console.log("Line 355: WHERE?" + body) } )
+        .catch( (err) =>  { console.log("ejecutar comandos. err=" + err); return err })  
   };
+} */
+async function ejecutarcoms(coms, location) {
+  
+    const locaux= location;
+    var loc=location;
+    //console.log("YYYYYYYYYYYYYYYYYYYYYYYY location= " + location.x + " " +location.y);
+    //console.log("OOOOOOOOOOOOOOOOOOOOOOOO coms= " + coms);
+    for (let com in coms) {
+        //axios.put('http://localhost:3001/api/E');
+        console.log(com + ' - http://localhost:3001/api/' + coms[com] );
+        const out =  await fetch('http://localhost:3001/api/' + coms[com] , { method: 'PUT' })
+        .then(  (res) => { 
+          console.log('ejecutar comandos. res=' + res); 
+          if (res.status == 206) {
+            ejecutarcoms(['E','R','F']);
+          };
+          return res })
+        .catch( (err) =>  { console.log("ejecutar comandos. err=" + err); return err })  
+    }
+  
 }
 
 
