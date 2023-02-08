@@ -125,24 +125,12 @@ app.get('/api/location', function(req, res) {
 // El comando lo pasamos como parámetro para aprovechar el cuerpo de la función
 //
 
-/*
-function save(myrobotOut) {
-  fs.writeFile(robotsDB, myrobotOut, err => {
-    if (err) {
-      console.log('Error writing file', err)
-    } else {
-      console.log('Successfully wrote file. myrobotOut=' + myrobotOut)
-    }
-  })
-}*/
-
-
 app.put('/api/:comando', function(req, res) {
   
   var com= req.params.comando;
   
   console.log("INICIO ejecutando put http://localhost:3001/api/" + com);
-
+  
   // Validamos comando
   if ( ! ['F', 'B', 'R', 'L', 'S', 'E'].includes(com) ) {
     res.status(400).json("comando no conocido: " + com + " comando debe ser: F, B, R, L, S, E. Ver ayuda");
@@ -206,10 +194,6 @@ app.put('/api/:comando', function(req, res) {
           } else {
             myrobot.SamplesCollected = [terinit]
           }
-          // Persistimos en "BDD", es un fichero texto con formato JSON
-          //const myrobotOut = JSON.stringify(myrobot);
-          //const myrobotOut = JSON.stringify(myrobot);
-          //save(myrobotOut);
         // Comando Forward o Backward, or turn right or left
         } else if ( ['F','B','L','R'].includes(com) ) {
           var newdir = direccion;
@@ -252,11 +236,6 @@ app.put('/api/:comando', function(req, res) {
               myrobot.VisitedCells.push(myrobot.initialPosition.location)
               //}
             }
-
-            // Persistimos en "BDD", es un fichero texto con formato JSON
-            //const myrobotOut = JSON.stringify(myrobot);
-            //const myrobotOut = JSON.stringify(myrobot);
-            //save(myrobotOut);
           } else {
             console.log("No se puede hacer movimiento, aplicar estrategias");
             console.log('BLOQUEADO. APLICAR ESTRATEGIAS.', err);
@@ -266,7 +245,7 @@ app.put('/api/:comando', function(req, res) {
         }
       }
       const myrobotOut = JSON.stringify(myrobot);
-      //save(myrobotOut);
+     
       fs.writeFile(robotsDB, myrobotOut, err => {
         if (err) {
           console.log('ERROR writing file', err)
@@ -283,14 +262,18 @@ app.put('/api/:comando', function(req, res) {
 })
 
 
-//return res.status(500).send();
+/////////////////////////////////////////////////
+// API REST POST METHOD. savefile
+// El fichero de salida lo pasamos como parámetro 
+//
 
 app.use(express.json());
+//console.log('http://localhost:3001/api/savefile');
 app.post('/api/savefile', function(req, res) {
 
-  const fileout = JSON.stringify(req.body.data)
-  //console.log("req.body.data= " + fileout );
-
+  const fileout = JSON.stringify(req.body.data);
+  console.log("api/savefile req.body.data= " + fileout  );
+  
   fs.readFile(robotsDB, 'utf8', (err, data) => {
     if (err) {
       console.error(err);
@@ -302,20 +285,25 @@ app.post('/api/savefile', function(req, res) {
       // Cambiamos la propiedad initialPosition por FinalPosition 
       myrobot.FinalPosition = myrobot.initialPosition;
       delete myrobot.initialPosition;
-      
 
       // Persistimos en "BDD", es un fichero texto con formato JSON
       const myrobotOut = JSON.stringify(myrobot);
-      fs.writeFile(fileout, myrobotOut, err => {
+      const dir= path.dirname(fileout);
+      const file= path.basename(fileout);
+      
+      fs.writeFile(path.join( dir, fileout), myrobotOut, err => {
+      //fs.writeFile(fileout, myrobotOut, err => {
         if (err) {
-          console.log('Error writing file', err)
+          console.log('Error writing file', err);
+          res.status(400).json(myrobot)
         } else {
-          console.log('Successfully wrote file')
+          console.log('Successfully wrote file=' + fileout);
+          res.status(200).json(myrobot)
         }
       })
-      res.status(200).json(myrobot)
     }
   })
+  
 })
 
 /////////////////////////////////////////////////////
@@ -325,7 +313,7 @@ app.post('/api/savefile', function(req, res) {
 /////////////////////// EJECUTAR COMANDOS o TAMBIÉN UNA DE LAS ESTRATEGIAS
 
 
-async function ejecutarcoms2(coms, location) {
+async function ejecutarcoms2(coms, location, fileOut) {
   
     const estrategias= [['E','R','F'],['E','L','F'],['E','L','L','F'],['E','B','R','F'],['E','B','B','L','F'],['E','F','F'],['E','F','L','F','F']];
 
@@ -341,6 +329,7 @@ async function ejecutarcoms2(coms, location) {
     do {
       
       next = true; 
+      estrategia = false; // inicialmente no es necesaria
       while (next && com < coms.length ) {
         //axios.put('http://localhost:3001/api/E');
         console.log(com + ' - http://localhost:3001/api/' + coms[com] );
@@ -391,11 +380,47 @@ async function ejecutarcoms2(coms, location) {
           if (comest == est.length && nextcomest ) { // Un existo la estrategia, no ejecutamos más.
             nextest= false;
             next= true; // Si quedan comandos continuamos con su ejecución
+
           }
           est++;
         }
       }
     } while ( next && com < coms.length  )
+
+    // Guardamos resultado en fichero de salido llamando a la api/savefile
+    const params = {
+      fileout: fileOut,
+      param2: 'pruebaparam2'
+    };
+    const options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify( params )  
+    }
+
+    console.log('Hello!!! http://localhost:3001/api/savefile ' + fileOut);
+    axios.post('http://localhost:3001/api/savefile', {
+      //robot
+      //data: JSON.stringify(robot)
+      data : fileOut
+    })
+    .then(function (response)  {
+      console.log('response= ' + response);
+      return response 
+    })
+    .catch(function (err)  {
+      console.log('err=' + err);
+      return err
+    } )
+    /* const out =  await fetch('http://localhost:3001/api/savefile'  , 
+      { method : 'POST',  headers: { 'Content-Type': 'application/json'}, body : { fileout : 'a_ver_porfavor' }  })
+      .then(  (res) => { 
+        console.log('ejecutar comandos. res=' + res); 
+        return res })
+      .catch( (err) =>  { 
+        console.log("ejecutar comandos. err=" + err); 
+        return err }) 
+     */
 }
 
 
@@ -411,7 +436,7 @@ function savefiletest(fileOut) {
 
       // Cambiamos la propiedad initialPosition por FinalPosition 
       myrobot.FinalPosition = myrobot.initialPosition;
-      //delete myrobot.initialPosition;
+      delete myrobot.initialPosition;
 
       // Persistimos en "BDD", es un fichero texto con formato JSON
       const myrobotOut = JSON.stringify(myrobot);
@@ -419,7 +444,7 @@ function savefiletest(fileOut) {
         if (err) {
           console.log('Error writing file', err)
         } else {
-          console.log('Successfully wrote file')
+          console.log('Successfully wrote out test file=' + fileOut + ' myrobotOut=' + myrobotOut)
         }
       })
       //res.status(200).json(myrobot)
@@ -444,15 +469,16 @@ function postRequest(robot, fileOut)
     console.log("typeof rob= " + typeof(rob) + " rob= " + rob);
 
     // Ejecutar comandos
-    var ejecresul=ejecutarcoms2(rob.commands, rob.initialPosition.location);
+    var ejecresul=ejecutarcoms2(rob.commands, rob.initialPosition.location, fileOut);
     // Guardar fichero de salida para los tests
-    var fileTestOut= savefiletest(fileOut);
+    console.log("savefile fileOut=" + fileOut);
+    
+    //var fileTestOut= savefiletest(fileOut);
   })
   .catch(function (error) {
     console.log(error);
   })
-  .then(function () {
-  });
+
 }
 
 
@@ -461,6 +487,7 @@ function postRequest(robot, fileOut)
 // y guradamos o bien el fichero del segundo parametro o uno por defecto
 // igual que el primero pero con extensión .out
 if (num_args == 2) {
+  
   const filejsonIn= argv._[0];
   const filejsonOut=argv._[1];
 
