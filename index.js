@@ -291,7 +291,7 @@ app.post('/api/savefile', function(req, res) {
       const dir= path.dirname(fileout);
       const file= path.basename(fileout);
       
-      fs.writeFile(path.join( dir, fileout), myrobotOut, err => {
+      fs.writeFile(path.join( dir, fileout).replace(/['"]+/g, ''), myrobotOut, err => {
       //fs.writeFile(fileout, myrobotOut, err => {
         if (err) {
           console.log('Error writing file', err);
@@ -423,34 +423,6 @@ async function ejecutarcoms2(coms, location, fileOut) {
      */
 }
 
-
-function savefiletest(fileOut) {
-
-  fs.readFile(robotsDB, 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      res.status(400).json("Error lectura file DB : " + robotsDB)
-    } else {
-      // Si lectura correcta creamos objetvo myrobot con JSON.parse
-      const myrobot = JSON.parse(data);
-
-      // Cambiamos la propiedad initialPosition por FinalPosition 
-      myrobot.FinalPosition = myrobot.initialPosition;
-      delete myrobot.initialPosition;
-
-      // Persistimos en "BDD", es un fichero texto con formato JSON
-      const myrobotOut = JSON.stringify(myrobot);
-      fs.writeFile(fileOut, myrobotOut, err => {
-        if (err) {
-          console.log('Error writing file', err)
-        } else {
-          console.log('Successfully wrote out test file=' + fileOut + ' myrobotOut=' + myrobotOut)
-        }
-      })
-      //res.status(200).json(myrobot)
-    }
-  })
-}
 
 // FUNCTIONS TO CALL APIs desde CONSOLA (TERMINAL)
 function postRequest(robot, fileOut)
