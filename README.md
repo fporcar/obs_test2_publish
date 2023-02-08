@@ -6,7 +6,7 @@ Ejecutar desde la línea de comandos: node obs_test2.js
 Ejecutar para testearlo con ficheros desde la líena de comandos node index.js test_run_1.json test_sal_1.json 
 
 El diseño es sencillo: 
-BDD: un fichero json en el mismo repositorio que el ejecutable node (index.js)
+BDD: un fichero json en el mismo repositorio que el ejecutable node (index.js). Idealmente habría que ponerlo mongoDB
 API REST para añadir, consultar y modificar la información (Apoyandose en Node.js y Express)
 Una función de servidor en escuha por el puerto 3001
 Una función para ejecuar situaciones del robot proporcionado por fichero y la salida es un fichero
