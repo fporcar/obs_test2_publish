@@ -1,1 +1,1 @@
-{"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":50,"commands":["S","F","S","R","F","S","F","S"],"FinalPosition":{"location":{"x":0,"y":0},"facing":"East"}}
+{"battery":50,"FinalPosition":{"location":{"x":0,"y":0},"facing":"East"}}

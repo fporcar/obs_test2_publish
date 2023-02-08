@@ -14,12 +14,10 @@ const axios = require('axios'); //.default;
 const { exec } = require("child_process");
 const fetch = require('node-fetch');
 const path = require('path');
-//const estrategias= {{'E','R','F'},{'E','L','F'},{'E','L','L','F'},{'E','B','R','F'},{'E','B','B','L','F'},{'E','F','F'},{'E','F','L','F','F'}};
-
-
 // también yargs
 
 // PARAMETROS
+const url = 'http://localhost:3001';
 const port = 3001;
 const robotsDB= "C:\\nodejs\\obs_test2\\robots.json";
 
@@ -127,6 +125,7 @@ app.get('/api/location', function(req, res) {
 // El comando lo pasamos como parámetro para aprovechar el cuerpo de la función
 //
 
+/*
 function save(myrobotOut) {
   fs.writeFile(robotsDB, myrobotOut, err => {
     if (err) {
@@ -135,7 +134,7 @@ function save(myrobotOut) {
       console.log('Successfully wrote file. myrobotOut=' + myrobotOut)
     }
   })
-}
+}*/
 
 
 app.put('/api/:comando', function(req, res) {
@@ -260,15 +259,9 @@ app.put('/api/:comando', function(req, res) {
             //save(myrobotOut);
           } else {
             console.log("No se puede hacer movimiento, aplicar estrategias");
-            //ejecutarestrategias(myrobot.initialPosition.location);
-            //.then((res) => {console.log('I am the .then of ejecutar estrategias. res=' + res); return res })
-            //.catch((err) => { console.log('I am here waitting strategies execution pero hubo un error:' + err); return err } );
             console.log('BLOQUEADO. APLICAR ESTRATEGIAS.', err);
             console.log("FIN ejecutando put http://localhost:3001/api/" + com);
             return res.status(206).json(myrobot)
-            /*myrobot.blocked = true; 
-            const myrobotOut = JSON.stringify(myrobot);
-            save(myrobotOut); */
           }
         }
       }
@@ -327,79 +320,82 @@ app.post('/api/savefile', function(req, res) {
 
 /////////////////////////////////////////////////////
 
-///////////////////// EJECUTAR ESTRATEGIAS
-async function ejecutarestrategias(location) {
-  //const estrategias= [['E','R','F'],['E','L','F'],['E','L','L','F'],['E','B','R','F'],['E','B','B','L','F'],['E','F','F'],['E','F','L','F','F']];
-  const estrategias= [['E','R','F'],['E','L','F']];
-  
-  // Condición para salir del bucle, que al ejecutar la estrategía se salga de estar bloqueado el robot
-  // o bien que no queden más estrategias
-  var estrategiaOK= false; 
-  i=-1;
-
-  console.log("Inicio bucle estrategias" );
-  while ( !estrategiaOK && i < estrategias.length-1) {
-    i++;
-    for (let com in estrategias[i]) {
-      //axios.put('http://localhost:3001/api/E');
-      console.log(com + ' - http://localhost:3001/api/' + coms[com] );
-      const out =  await fetch('http://localhost:3001/api/' + coms[com] , { method: 'PUT' })
-      .then(  (res) => { console.log('ejecutar comandos. res=' + res); return res })
-      //.then(  (body) => { console.log("Line 355: WHERE?" + body) } )
-      .catch( (err) =>  { console.log("ejecutar comandos. err=" + err); return err });
-    }
-    /*// Comprobamos si se ha movido y por tanto se deja de ejecutar estrategias
-    const out = fetch('http://localhost:3001/api/location' , { method: 'GET' })
-                    .then(  (response) => response.text())
-                    .then(  (body) => { 
-                    console.log(body); 
-                    loc=JSON.parse(body); 
-                    estrategiaOK=  (location.x == loc.x && location.y == loc.y) 
-                    if ( estrategiaOK ) return estrategiaOK; else return false;
-                    } )
-                   .catch( (err) => { console.log(err) } )      
-     */
-  }
-}
-
-
 
 
 /////////////////////// EJECUTAR COMANDOS o TAMBIÉN UNA DE LAS ESTRATEGIAS
-/* async function ejecutarcoms(coms, location) {
 
-  const locaux= location;
-  var loc=location;
-  //console.log("YYYYYYYYYYYYYYYYYYYYYYYY location= " + location.x + " " +location.y);
-  //console.log("OOOOOOOOOOOOOOOOOOOOOOOO coms= " + coms);
-  for (let com in coms) {
-        //axios.put('http://localhost:3001/api/E');
-        console.log(com + ' - http://localhost:3001/api/' + coms[com] );
-        const out =  await fetch('http://localhost:3001/api/' + coms[com] , { method: 'PUT' })
-        .then(  (res) => { console.log('ejecutar comandos. res=' + res); return res })
-        //.then(  (body) => { console.log("Line 355: WHERE?" + body) } )
-        .catch( (err) =>  { console.log("ejecutar comandos. err=" + err); return err })  
-  };
-} */
-async function ejecutarcoms(coms, location) {
+
+async function ejecutarcoms2(coms, location) {
   
+    const estrategias= [['E','R','F'],['E','L','F'],['E','L','L','F'],['E','B','R','F'],['E','B','B','L','F'],['E','F','F'],['E','F','L','F','F']];
+
     const locaux= location;
     var loc=location;
     //console.log("YYYYYYYYYYYYYYYYYYYYYYYY location= " + location.x + " " +location.y);
     //console.log("OOOOOOOOOOOOOOOOOOOOOOOO coms= " + coms);
-    for (let com in coms) {
+    
+    
+    estrategia = false; // inicialmente no es necesaria
+    com=0; // indice comandos
+    
+    do {
+      
+      next = true; 
+      while (next && com < coms.length ) {
         //axios.put('http://localhost:3001/api/E');
         console.log(com + ' - http://localhost:3001/api/' + coms[com] );
         const out =  await fetch('http://localhost:3001/api/' + coms[com] , { method: 'PUT' })
-        .then(  (res) => { 
-          console.log('ejecutar comandos. res=' + res); 
-          if (res.status == 206) {
-            ejecutarcoms(['E','R','F']);
-          };
-          return res })
-        .catch( (err) =>  { console.log("ejecutar comandos. err=" + err); return err })  
-    }
+          .then(  (res) => { 
+            console.log('ejecutar comandos. res=' + res); 
+            if (res.status == 206) {
+              next = false;
+              estrategia = true
+            };
+            return res })
+          .catch( (err) =>  { 
+            console.log("ejecutar comandos. err=" + err); 
+            next=false;
+            return err })  
+        com++;
+      } 
   
+      // Ejecutamos estrategias si necesario, el primer bucle es para recorrer
+      // la lista de estrategias hasta que se encuentre una que saca del bloqueo al robot.
+      // El segundo bucle ejecuta los comandos de la estrategia
+      if ( estrategia ) {
+        nextest=true;
+        est=0; // indice estrategias
+        while (nextest && est < estrategias.length ) {
+          nextcomest = true;
+          est=estrategias[est];  
+          comest=0;
+          while ( nextcomest && comest < est.length ) {
+            console.log(est + ' - http://localhost:3001/api/' + est[comest] );
+            const out =  await fetch('http://localhost:3001/api/' + est[comest] , { method: 'PUT' })
+              .then(  (res) => { 
+                console.log('ejecutar comandos. res=' + res); 
+                if (res.status == 206) {
+                  nextcomest = false;
+                } /*else {
+                  estOK=true;
+                };*/
+                return res })
+              .catch( (err) =>  { 
+                console.log("ejecutar comandos. err=" + err); 
+                nextcomest=false;
+                nextest=false;
+                next=false;
+                return err })  
+            comest++;
+          }
+          if (comest == est.length && nextcomest ) { // Un existo la estrategia, no ejecutamos más.
+            nextest= false;
+            next= true; // Si quedan comandos continuamos con su ejecución
+          }
+          est++;
+        }
+      }
+    } while ( next && com < coms.length  )
 }
 
 
@@ -415,7 +411,7 @@ function savefiletest(fileOut) {
 
       // Cambiamos la propiedad initialPosition por FinalPosition 
       myrobot.FinalPosition = myrobot.initialPosition;
-      delete myrobot.initialPosition;
+      //delete myrobot.initialPosition;
 
       // Persistimos en "BDD", es un fichero texto con formato JSON
       const myrobotOut = JSON.stringify(myrobot);
@@ -448,7 +444,7 @@ function postRequest(robot, fileOut)
     console.log("typeof rob= " + typeof(rob) + " rob= " + rob);
 
     // Ejecutar comandos
-    var ejecresul=ejecutarcoms(rob.commands, rob.initialPosition.location);
+    var ejecresul=ejecutarcoms2(rob.commands, rob.initialPosition.location);
     // Guardar fichero de salida para los tests
     var fileTestOut= savefiletest(fileOut);
   })

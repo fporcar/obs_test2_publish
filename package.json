@@ -4,7 +4,8 @@
   "description": "obs assignment",
   "main": "index.js",
   "scripts": {
-    "test": "obs_test2 .\\\\jsonInput.json .\\\\jsonOutput.json"
+    "test1": "obs_test2 .\\\\test_sol_1.json .\\\\test_sol_1.json",
+    "test2": "obs_test2 .\\\\test_sol_2.json .\\\\test_sol_2.json"
   },
   "author": "Francisco Javier Porcar Laynez",
   "license": "MIT",
@@ -16,6 +17,6 @@
     "yargs-parser": "^21.1.1"
   },
   "bin": {
-    "obs_test2": "./index.js"
+    "obs_test2": "node index.js"
   }
 }

@@ -1,0 +1,369 @@
+req.body.data= {"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":50,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":0,"y":0},"facing":"East"}}
+Successfully robotpost created with REST POST
+typeof rob= object rob= [object Object]
+0 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":50,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":0,"y":0},"facing":"East"}}
+Successfully wrote file
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":42,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":0,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+1 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":42,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":0,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":39,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+2 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":39,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":31,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe","Fe"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+3 - http://localhost:3001/api/R
+INICIO ejecutando put http://localhost:3001/api/R
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":31,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe","Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":29,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe","Fe"]}
+FIN ejecutando put http://localhost:3001/api/R
+ejecutar comandos. res=[object Response]
+4 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":29,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe","Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":26,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Fe"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+5 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":26,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":18,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+6 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":18,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Fe","Si"]}
+No se puede hacer movimiento, aplicar estrategias
+BLOQUEADO. APLICAR ESTRATEGIAS. null
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+E,R,F - http://localhost:3001/api/E
+INICIO ejecutando put http://localhost:3001/api/E
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":18,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Fe","Si"]}
+robot charged battery!=  {
+  terrain: [ [ 'Fe', 'Fe', 'Se' ], [ 'W', 'Si', 'Obs' ], [ 'W', 'Obs', 'Zn' ] ],
+  battery: 27,
+  commands: [
+    'S', 'F', 'S',
+    'R', 'F', 'S',
+    'F', 'S'
+  ],
+  initialPosition: { location: { x: 1, y: 1 }, facing: 'South' },
+  VisitedCells: [ { x: 0, y: 0 }, { x: 1, y: 0 }, { x: 1, y: 1 } ],
+  SamplesCollected: [ 'Fe', 'Fe', 'Si' ]
+}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":27,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/E
+ejecutar comandos. res=[object Response]
+E,R,F - http://localhost:3001/api/R
+INICIO ejecutando put http://localhost:3001/api/R
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":27,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":25,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/R
+ejecutar comandos. res=[object Response]
+E,R,F - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":25,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":22,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+7 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":22,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":14,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Fe","Si","W"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+E,R,F - http://localhost:3001/api/E
+INICIO ejecutando put http://localhost:3001/api/E
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":14,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Fe","Si","W"]}
+robot charged battery!=  {
+  terrain: [ [ 'Fe', 'Fe', 'Se' ], [ 'W', 'Si', 'Obs' ], [ 'W', 'Obs', 'Zn' ] ],
+  battery: 23,
+  commands: [
+    'S', 'F', 'S',
+    'R', 'F', 'S',
+    'F', 'S'
+  ],
+  initialPosition: { location: { x: 0, y: 1 }, facing: 'West' },
+  VisitedCells: [ { x: 0, y: 0 }, { x: 1, y: 0 }, { x: 1, y: 1 }, { x: 0, y: 1 } ],
+  SamplesCollected: [ 'Fe', 'Fe', 'Si', 'W' ]
+}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":23,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Fe","Si","W"]}
+FIN ejecutando put http://localhost:3001/api/E
+ejecutar comandos. res=[object Response]
+E,R,F - http://localhost:3001/api/R
+INICIO ejecutando put http://localhost:3001/api/R
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":23,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Fe","Si","W"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":21,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"North"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Fe","Si","W"]}
+FIN ejecutando put http://localhost:3001/api/R
+ejecutar comandos. res=[object Response]
+E,R,F - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":21,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"North"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Fe","Si","W"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":18,"commands":["S","F","S","R","F","S","F","S"],"initialPosition":{"location":{"x":0,"y":0},"facing":"North"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":0}],"SamplesCollected":["Fe","Fe","Si","W"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+^Creq.body.data= {"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":50,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":0},"facing":"East"}}
+Successfully robotpost created with REST POST
+typeof rob= object rob= [object Object]
+0 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":50,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":0},"facing":"East"}}
+Successfully wrote file
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":47,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+1 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":47,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":39,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+2 - http://localhost:3001/api/R
+INICIO ejecutando put http://localhost:3001/api/R
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":39,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":37,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/R
+ejecutar comandos. res=[object Response]
+3 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":37,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":34,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+4 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":34,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":26,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+5 - http://localhost:3001/api/R
+INICIO ejecutando put http://localhost:3001/api/R
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":26,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":24,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/R
+ejecutar comandos. res=[object Response]
+6 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":24,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":21,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+7 - http://localhost:3001/api/L
+INICIO ejecutando put http://localhost:3001/api/L
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":21,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":19,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/L
+ejecutar comandos. res=[object Response]
+8 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":19,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":16,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":2},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":2}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+9 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":16,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":2},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":2}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":8,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":2},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":2}],"SamplesCollected":["Fe","Si","W"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+^Creq.body.data= {"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":50,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":0},"facing":"East"}}
+Successfully robotpost created with REST POST
+typeof rob= object rob= [object Object]
+0 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":50,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":0},"facing":"East"}}
+Successfully wrote file
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":47,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+1 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":47,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":39,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+2 - http://localhost:3001/api/R
+INICIO ejecutando put http://localhost:3001/api/R
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":39,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":37,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/R
+ejecutar comandos. res=[object Response]
+3 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":37,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":34,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+4 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":34,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":26,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+5 - http://localhost:3001/api/R
+INICIO ejecutando put http://localhost:3001/api/R
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":26,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":24,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/R
+ejecutar comandos. res=[object Response]
+6 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":24,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":21,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+7 - http://localhost:3001/api/L
+INICIO ejecutando put http://localhost:3001/api/L
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":21,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":19,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/L
+ejecutar comandos. res=[object Response]
+8 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":19,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":16,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":2},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":2}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+9 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":16,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":2},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":2}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":8,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":2},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":2}],"SamplesCollected":["Fe","Si","W"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+^Creq.body.data= {"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":50,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":0},"facing":"East"}}
+Successfully robotpost created with REST POST
+typeof rob= object rob= [object Object]
+0 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":50,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":0},"facing":"East"}}
+Successfully wrote file
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":47,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+1 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":47,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":39,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+2 - http://localhost:3001/api/R
+INICIO ejecutando put http://localhost:3001/api/R
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":39,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":37,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/R
+ejecutar comandos. res=[object Response]
+3 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":37,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":34,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+4 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":34,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":26,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+5 - http://localhost:3001/api/R
+INICIO ejecutando put http://localhost:3001/api/R
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":26,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":24,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/R
+ejecutar comandos. res=[object Response]
+6 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":24,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":21,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+7 - http://localhost:3001/api/L
+INICIO ejecutando put http://localhost:3001/api/L
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":21,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":19,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/L
+ejecutar comandos. res=[object Response]
+8 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":19,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":16,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":2},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":2}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+9 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":16,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":2},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":2}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":8,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":2},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":2}],"SamplesCollected":["Fe","Si","W"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+^Creq.body.data= {"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":50,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":0},"facing":"East"}}
+Successfully robotpost created with REST POST
+typeof rob= object rob= [object Object]
+0 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":50,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":0},"facing":"East"}}
+Successfully wrote file
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":47,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+1 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":47,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":39,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+2 - http://localhost:3001/api/R
+INICIO ejecutando put http://localhost:3001/api/R
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":39,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"East"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":37,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/R
+ejecutar comandos. res=[object Response]
+3 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":37,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":0},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":34,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+4 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":34,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":26,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
+5 - http://localhost:3001/api/R
+INICIO ejecutando put http://localhost:3001/api/R
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":26,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":24,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/R
+ejecutar comandos. res=[object Response]
+6 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":24,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":1,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":21,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+7 - http://localhost:3001/api/L
+INICIO ejecutando put http://localhost:3001/api/L
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":21,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"West"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":19,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/L
+ejecutar comandos. res=[object Response]
+8 - http://localhost:3001/api/F
+INICIO ejecutando put http://localhost:3001/api/F
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":19,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":1},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":16,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":2},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":2}],"SamplesCollected":["Fe","Si"]}
+FIN ejecutando put http://localhost:3001/api/F
+ejecutar comandos. res=[object Response]
+9 - http://localhost:3001/api/S
+INICIO ejecutando put http://localhost:3001/api/S
+robosDB read, data={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":16,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":2},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":2}],"SamplesCollected":["Fe","Si"]}
+Successfully wrote file. myrobotOut={"terrain":[["Fe","Fe","Se"],["W","Si","Obs"],["W","Obs","Zn"]],"battery":8,"commands":["F","S","R","F","S","R","F","L","F","S"],"initialPosition":{"location":{"x":0,"y":2},"facing":"South"},"VisitedCells":[{"x":0,"y":0},{"x":1,"y":0},{"x":1,"y":1},{"x":0,"y":1},{"x":0,"y":2}],"SamplesCollected":["Fe","Si","W"]}
+FIN ejecutando put http://localhost:3001/api/S
+ejecutar comandos. res=[object Response]
