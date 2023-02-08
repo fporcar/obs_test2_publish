@@ -23,11 +23,16 @@ Las apis son:
 
 La API donde se le da vida al robotes la de ejecución decomandos (/api/:id).
 
-Para probarla ejecutar los dos ficheros de pruebas, para terminar Ctrl+C pues se deja en escucha por si se quiere lanzar alguna petición:
+1) Para instalarlo:
+
+Descargar ficheros del repositorio de github y donde se hayan copiado ejecutar: 
+node install . -g
+
+2) Para probarla ejecutar los dos ficheros de pruebas, para terminar Ctrl+C pues se deja en escucha por si se quiere lanzar alguna petición:
 node index.js test_run_1.json c:\nodejs\obs_test2\test_sal_1.json  > test1.log 2>&1
 node index.js test_run_2.json c:\nodejs\obs_test2\test_sal_2.json  > test2.log 2>&1
 
-Para ejecutarlo en producción:
+3) Para ejecutarlo en producción:
 node index.js
 O bien 
 node index.js mirobot.json resultado.out
@@ -37,3 +42,7 @@ WARNING!: No ejecutar modo test en entorno productivio pues machacaría el fiche
 por si se quiere inicializar el robot con un fichero desde la línea de comandos y luego dejarlo en escucha.
 
 IMPORTANTE!: Siempre se queda persistido el robot en el fichero robots.json en el mismo directorio que el programa. (
+
+Concertando cita se puede hacer una demo del mismo. 
+
+Autor: Francisco Porcar
